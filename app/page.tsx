@@ -182,27 +182,6 @@ export default function Home() {
         )}
       </section>
 
-      {/* Recent History */}
-      {history.length > 0 && (
-        <section className={styles.history}>
-          <div className={styles.historyTitle}>
-            <span>⟳</span> Recently Analyzed
-          </div>
-          {history.map((item) => (
-            <div
-              key={item.id}
-              className={styles.historyItem}
-              onClick={() => setUrl(item.url)}
-            >
-              <div className={styles.historyRepo}>{item.repo_name}</div>
-              <div className={styles.historyMeta}>
-                {timeAgo(item.checked_at)}
-              </div>
-            </div>
-          ))}
-        </section>
-      )}
-
       {/* Results */}
       {repoData && analysis && (
         <section className={styles.results}>
